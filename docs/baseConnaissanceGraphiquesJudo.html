@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jérémy Dudek">
+
+<title>Base de connaissance</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#à-propos" id="toc-à-propos" class="nav-link active" data-scroll-target="#à-propos">À propos</a></li>
+  <li><a href="#code---sortie-du-document-en-eps" id="toc-code---sortie-du-document-en-eps" class="nav-link" data-scroll-target="#code---sortie-du-document-en-eps">Code - sortie du document en EPS</a>
+  <ul>
+  <li><a href="#les-packages-à-installer" id="toc-les-packages-à-installer" class="nav-link" data-scroll-target="#les-packages-à-installer">Les packages à installer</a></li>
+  </ul></li>
+  <li><a href="#exemple-de-graphiques" id="toc-exemple-de-graphiques" class="nav-link" data-scroll-target="#exemple-de-graphiques">Exemple de graphiques</a>
+  <ul>
+  <li><a href="#kilimanjaro" id="toc-kilimanjaro" class="nav-link" data-scroll-target="#kilimanjaro">KILIMANJARO</a>
+  <ul>
+  <li><a href="#situation-de-kering" id="toc-situation-de-kering" class="nav-link" data-scroll-target="#situation-de-kering">Situation de Kering</a></li>
+  </ul></li>
+  <li><a href="#gazel" id="toc-gazel" class="nav-link" data-scroll-target="#gazel">GAZEL</a>
+  <ul>
+  <li><a href="#pie-chart-des-forêts" id="toc-pie-chart-des-forêts" class="nav-link" data-scroll-target="#pie-chart-des-forêts">Pie Chart des forêts</a></li>
+  <li><a href="#histogramme-cumulatif---données-gazel-lbc" id="toc-histogramme-cumulatif---données-gazel-lbc" class="nav-link" data-scroll-target="#histogramme-cumulatif---données-gazel-lbc">Histogramme cumulatif - données Gazel / LBC</a></li>
+  <li><a href="#histogramme-horizontal" id="toc-histogramme-horizontal" class="nav-link" data-scroll-target="#histogramme-horizontal">Histogramme horizontal</a></li>
+  <li><a href="#parrallel-weight-bars" id="toc-parrallel-weight-bars" class="nav-link" data-scroll-target="#parrallel-weight-bars">Parrallel Weight Bars</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Base de connaissance</h1>
+<p class="subtitle lead">Graphiques Judo Cares</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jérémy Dudek </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="à-propos" class="level2">
+<h2 class="anchored" data-anchor-id="à-propos">À propos</h2>
+<p>Ce document regroupe l’ensemble des graphiques et leurs codes, utilisés dans les présentations Judo Cares.</p>
+</section>
+<section id="code---sortie-du-document-en-eps" class="level2">
+<h2 class="anchored" data-anchor-id="code---sortie-du-document-en-eps">Code - sortie du document en EPS</h2>
+<p>Le format EPS est à privilégier dès lors qu’il permet d’alléger les documents et de conserver une sortie entièrement vectorisée.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setEPS</span>(<span class="at">paper=</span><span class="st">"special"</span>,<span class="at">width =</span> <span class="dv">8</span>,<span class="at">height =</span> <span class="dv">10</span>,<span class="at">horizontal =</span> T, <span class="at">onefile =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">postscript</span>(<span class="at">file =</span> <span class="st">"/Users/jeremy/Downloads/stackedPlot.eps"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot3)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dans l’exemple ci-dessus, nous avons une ligne permettant de définir les caractéristiques de la sortie (hauteur, largeur) avant d’écrire le fichier eps du <code>plot3</code>.</p>
+<section id="les-packages-à-installer" class="level3">
+<h3 class="anchored" data-anchor-id="les-packages-à-installer">Les packages à installer</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(extrafont)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">font_import</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Importing fonts may take a few minutes, depending on the number of fonts and the speed of the system.
+Continue? [y/n] </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadfonts</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="exemple-de-graphiques" class="level2">
+<h2 class="anchored" data-anchor-id="exemple-de-graphiques">Exemple de graphiques</h2>
+<section id="kilimanjaro" class="level3">
+<h3 class="anchored" data-anchor-id="kilimanjaro">KILIMANJARO</h3>
+<section id="situation-de-kering" class="level4">
+<h4 class="anchored" data-anchor-id="situation-de-kering">Situation de Kering</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tempData           <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HOME"</span>), <span class="st">"/Downloads/situationKili.csv"</span>), <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tempData2          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="sc">-</span><span class="fu">grep</span>(<span class="st">"X|Methodology|Link"</span>, <span class="fu">colnames</span>(tempData))], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Country"</span>, <span class="st">"Project.Type"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tempData2<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"Year."</span>, <span class="st">""</span>, tempData2<span class="sc">$</span>variable))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tempData2<span class="sc">$</span>value    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">""</span>, tempData2<span class="sc">$</span>value))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tempData2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Country                            Project.Type variable  value
+1      Kenya Agriculture Forestry and Other Land Use     2012 115000
+2     Brazil Agriculture Forestry and Other Land Use     2012     NA
+3  Indonesia Agriculture Forestry and Other Land Use     2012     NA
+4 Madagascar Agriculture Forestry and Other Land Use     2012     NA
+5   Colombia Agriculture Forestry and Other Land Use     2012     NA
+6   Cambodia Agriculture Forestry and Other Land Use     2012     NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>textValue <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="fu">c</span>(<span class="dv">2012</span><span class="sc">:</span><span class="dv">2021</span>),</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Sum =</span> <span class="fu">aggregate</span>(tempData2<span class="sc">$</span>value, <span class="fu">list</span>(tempData2<span class="sc">$</span>variable), sum, <span class="at">na.rm =</span> T)[,<span class="dv">2</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>colorsCountry      <span class="ot">&lt;-</span> scales<span class="sc">::</span><span class="fu">gradient_n_pal</span>(<span class="at">colours =</span> <span class="fu">c</span>(<span class="st">"#1B2441"</span>, <span class="st">"#64B9B9"</span>), <span class="at">space =</span>  <span class="fu">c</span>(<span class="st">"Lab"</span>))(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out =</span> <span class="fu">length</span>(<span class="fu">unique</span>(tempData<span class="sc">$</span>Country))))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> tempData2, <span class="fu">aes</span>(<span class="at">x =</span> variable, <span class="at">y =</span> value, <span class="at">fill =</span> Country)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colorsCountry) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">position=</span><span class="st">"right"</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"TCO2e"</span>, <span class="at">x =</span> <span class="st">"Year of carbon emissions"</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom=</span><span class="st">"text"</span>, <span class="at">x =</span> textValue<span class="sc">$</span>Year, <span class="at">y =</span> textValue<span class="sc">$</span>Sum <span class="sc">+</span> <span class="fl">0.025</span><span class="sc">*</span><span class="fu">max</span>(textValue<span class="sc">$</span>Sum), <span class="at">label =</span> <span class="fu">format</span>(textValue<span class="sc">$</span>Sum, <span class="at">big.mark =</span> <span class="st">" "</span>, <span class="at">scientific =</span> F), <span class="at">family =</span> <span class="st">"Kurier"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom=</span><span class="st">"text"</span>, <span class="at">x =</span> textValue<span class="sc">$</span>Year, <span class="at">y =</span> <span class="sc">-</span><span class="fl">0.025</span><span class="sc">*</span><span class="fu">max</span>(textValue<span class="sc">$</span>Sum), <span class="at">label =</span> textValue<span class="sc">$</span>Year, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="fl">2017.5</span>, <span class="at">xend =</span> <span class="fl">2017.5</span>, <span class="at">y =</span> <span class="sc">-</span>.<span class="dv">1</span><span class="sc">*</span><span class="fu">max</span>(textValue<span class="sc">$</span>Sum), <span class="at">yend =</span> <span class="fl">1.075</span><span class="sc">*</span><span class="fu">max</span>(textValue<span class="sc">$</span>Sum), <span class="at">colour =</span> <span class="st">"#64B9B9"</span>)<span class="sc">+</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2017.5</span>,<span class="at">y =</span> <span class="fl">1.15</span><span class="sc">*</span><span class="fu">max</span>(textValue<span class="sc">$</span>Sum), <span class="at">label =</span> <span class="st">"Announcement of Full carbon neutrality</span><span class="sc">\n</span><span class="st">Start offsetting Scope 3 as well"</span>, <span class="at">colour =</span> <span class="st">"#64B9B9"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">2021</span>, <span class="at">xend =</span> <span class="dv">2021</span>, <span class="at">y =</span> <span class="dv">1250000</span>, <span class="at">yend =</span> <span class="fl">2e6</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>)<span class="sc">+</span> </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2021</span>,<span class="at">y =</span> <span class="fl">2.1e6</span>, <span class="at">label =</span> <span class="st">"Firm2 only*"</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Kurier"</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">75</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'transparent'</span>, <span class="at">colour=</span><span class="st">'transparent'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tempData           <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HOME"</span>), <span class="st">"/Downloads/kiliSituation2-2.csv"</span>), <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tempData1          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"scope12"</span>,<span class="st">"scope123"</span>)], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Year"</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tempData2          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="fu">c</span>(<span class="st">"Year"</span>, <span class="st">"firm1Cost"</span>, <span class="st">"firm2Cost"</span>)], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Year"</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>tempData3          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="fu">c</span>(<span class="st">"Year"</span>,<span class="st">"firm2Purchase"</span>, <span class="st">"firm1Purchase"</span>)], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Year"</span>))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>tempData4          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="fu">c</span>(<span class="st">"Year"</span>,<span class="st">"firm2Purchase"</span>, <span class="st">"firm1Purchase"</span>)], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Year"</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>tempData1<span class="sc">$</span>value    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, tempData1<span class="sc">$</span>value))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>tempData2<span class="sc">$</span>value    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" €"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, tempData2<span class="sc">$</span>value)))</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>tempData3<span class="sc">$</span>value    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" €"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, tempData3<span class="sc">$</span>value)))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>tempData4<span class="sc">$</span>value    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" €"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, tempData4<span class="sc">$</span>value)))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>tempData1<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(tempData1<span class="sc">$</span>variable, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"scope123"</span>, <span class="st">"scope12"</span>))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>tempData3<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(tempData3<span class="sc">$</span>variable, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"firm1Purchase"</span>,<span class="st">"firm2Purchase"</span>))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tempData1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Year variable  value
+1 2015  scope12 100635
+2 2016  scope12  96113
+3 2017  scope12  89200
+4 2018  scope12  47540
+5 2019  scope12  35728
+6 2020  scope12  25527</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tempData3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Year      variable   value
+1 2015 firm2Purchase      NA
+2 2016 firm2Purchase      NA
+3 2017 firm2Purchase      NA
+4 2018 firm2Purchase 1400000
+5 2019 firm2Purchase 1375600
+6 2020 firm2Purchase  939359</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()<span class="sc">+</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> tempData1[<span class="fu">which</span>(tempData1<span class="sc">$</span>Year <span class="sc">&lt;=</span> <span class="dv">2020</span>),], <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> value, <span class="at">fill =</span> variable), <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> .<span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> tempData1[<span class="fu">which</span>(tempData1<span class="sc">$</span>Year <span class="sc">&gt;=</span> <span class="dv">2020</span>),], <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> value, <span class="at">fill =</span> variable), <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> tempData3, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> value, <span class="at">fill =</span> variable), <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">width =</span> .<span class="dv">3</span>, <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1B2441"</span>, <span class="st">"#64B9B9"</span>,<span class="st">"#CE4257"</span>, <span class="st">"#BBBBBB"</span>), <span class="at">name =</span> <span class="st">""</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Firm2"</span>, <span class="st">"Firm1"</span>, <span class="st">"Scope 1 &amp; 2"</span>, <span class="st">"Scope 1, 2 &amp; 3"</span>)) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">2.5e6</span>,<span class="dv">500000</span>), <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">2.5e6</span>,<span class="dv">500000</span>), <span class="at">big.mark =</span> <span class="st">" "</span>, <span class="at">scientific =</span> F)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2019</span>, <span class="at">y =</span> <span class="fl">2.7e6</span>, <span class="at">label =</span> <span class="st">"Impact du COVID"</span>, <span class="at">colour =</span> <span class="st">"#64B9B9"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2019</span>, <span class="at">y =</span> <span class="fl">2.5e6</span>, <span class="at">xend =</span> <span class="dv">2019</span>, <span class="at">yend =</span> <span class="fl">1.55e6</span>), <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">"cm"</span>)), <span class="at">colour =</span> <span class="st">"#64B9B9"</span>) <span class="sc">+</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2016</span>, <span class="at">y =</span> <span class="dv">300000</span>, <span class="at">label =</span> <span class="st">"Scope 1 &amp; 2 </span><span class="sc">\n</span><span class="st"> totalement compensés"</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2015</span>, <span class="at">y =</span> <span class="dv">175000</span>, <span class="at">xend =</span> <span class="dv">2017</span>, <span class="at">yend =</span> <span class="dv">175000</span>), <span class="at">colour =</span> <span class="st">"#1B2441"</span>) <span class="sc">+</span> </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2026</span>, <span class="at">y =</span> <span class="dv">1000000</span>, <span class="at">label =</span> <span class="st">"Projections des Scope 1, 2 &amp; 3"</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2022</span>, <span class="at">y =</span> <span class="dv">850000</span>, <span class="at">xend =</span> <span class="dv">2030</span>, <span class="at">yend =</span> <span class="dv">850000</span>), <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">ends=</span><span class="st">'both'</span>, <span class="at">length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">"cm"</span>))) <span class="sc">+</span> </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Année d'émission"</span>, <span class="at">y =</span> <span class="st">"TCO2e"</span>) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Kurier"</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.title=element_blank(),</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Kurier"</span>, <span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'transparent'</span>, <span class="at">colour=</span><span class="st">'transparent'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tempData3bis  <span class="ot">&lt;-</span> tempData3[<span class="fu">which</span>(tempData3<span class="sc">$</span>Year <span class="sc">&lt;</span> <span class="dv">2021</span>),]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tempDataPrice <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="fu">c</span>(<span class="dv">2015</span><span class="sc">:</span><span class="dv">2020</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Price =</span> <span class="fu">c</span>(<span class="fl">5.37</span>, <span class="fl">5.03</span>, <span class="fl">5.10</span>, <span class="fl">5.51</span>, <span class="fl">4.03</span>, <span class="fl">6.97</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tempData3bis))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Year      variable   value
+1 2015 firm2Purchase      NA
+2 2016 firm2Purchase      NA
+3 2017 firm2Purchase      NA
+4 2018 firm2Purchase 1400000
+5 2019 firm2Purchase 1375600
+6 2020 firm2Purchase  939359</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tempDataPrice))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Year Price
+1 2015  5.37
+2 2016  5.03
+3 2017  5.10
+4 2018  5.51
+5 2019  4.03
+6 2020  6.97</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()<span class="sc">+</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> tempData3bis, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> value), <span class="at">fill =</span> <span class="st">"#1B2441"</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">width =</span> .<span class="dv">8</span>, <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> tempDataPrice, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Price<span class="sc">*</span><span class="dv">250000</span>), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> tempDataPrice, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Price<span class="sc">*</span><span class="dv">250000</span>), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> tempDataPrice, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Price<span class="sc">*</span><span class="dv">250000</span>, <span class="at">label =</span> <span class="fu">paste</span>(<span class="fu">format</span>(Price, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">nsmall =</span> <span class="dv">2</span>), <span class="st">"EUR"</span>)), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">2.5e6</span>,<span class="dv">500000</span>), <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">2.5e6</span>,<span class="dv">500000</span>), <span class="at">big.mark =</span> <span class="st">" "</span>, <span class="at">scientific =</span> F), <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> . <span class="sc">/</span> <span class="dv">250000</span>, <span class="at">name =</span> <span class="fu">derive</span>())) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2019</span>, <span class="at">y =</span> <span class="fl">2.7e6</span>, <span class="at">label =</span> <span class="st">"Impact du COVID </span><span class="sc">\n</span><span class="st"> Les émissions ne sont pas enitèrement compensées"</span>, <span class="at">colour =</span> <span class="st">"#64B9B9"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span><span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2019</span>, <span class="at">y =</span> <span class="fl">2.5e6</span>, <span class="at">xend =</span> <span class="dv">2019</span>, <span class="at">yend =</span> <span class="fl">1.55e6</span>), <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(.<span class="dv">25</span>, <span class="st">"cm"</span>)), <span class="at">colour =</span> <span class="st">"#64B9B9"</span>) <span class="sc">+</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2016</span>, <span class="at">y =</span> <span class="dv">300000</span>, <span class="at">label =</span> <span class="st">"2015 à 2018 : Compensation des</span><span class="sc">\n</span><span class="st">Scope 1 et 2 seulement"</span>, <span class="at">colour =</span> <span class="st">"#1B2441"</span>, <span class="at">family =</span> <span class="st">"Kurier"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2015</span>, <span class="at">y =</span> <span class="dv">175000</span>, <span class="at">xend =</span> <span class="dv">2017</span>, <span class="at">yend =</span> <span class="dv">175000</span>), <span class="at">colour =</span> <span class="st">"#1B2441"</span>) <span class="sc">+</span> </span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Année d'émission"</span>, <span class="at">y =</span> <span class="st">"TCO2e"</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Kurier"</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># axis.title=element_blank(),</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Kurier"</span>, <span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span> <span class="fu">element_blank</span>(),          </span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour=</span><span class="st">"#F2F2F2"</span>),</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'transparent'</span>, <span class="at">colour=</span><span class="st">'transparent'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="gazel" class="level3">
+<h3 class="anchored" data-anchor-id="gazel">GAZEL</h3>
+<section id="pie-chart-des-forêts" class="level4">
+<h4 class="anchored" data-anchor-id="pie-chart-des-forêts">Pie Chart des forêts</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>dataGraph3            <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nom=</span><span class="fu">c</span>(<span class="st">"Forêt domaniale"</span>, <span class="st">"Autres forêts publiques"</span>,<span class="st">"Forêts privées"</span>), <span class="at">value =</span><span class="fu">c</span>(<span class="fl">0.2</span>,<span class="fl">0.36</span>,<span class="fl">0.44</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>dataGraph3<span class="sc">$</span>nom        <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataGraph3<span class="sc">$</span>nom,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Forêts privées"</span>, <span class="st">"Autres forêts publiques"</span>,<span class="st">"Forêt domaniale"</span>))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>dataGraph3[,<span class="st">"breaks"</span>] <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(<span class="fu">c</span>(<span class="dv">0</span>, dataGraph3<span class="sc">$</span>value[<span class="sc">-</span><span class="fu">length</span>(dataGraph3<span class="sc">$</span>value)])) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">cumsum</span>(dataGraph3<span class="sc">$</span>value) <span class="sc">-</span> <span class="fu">cumsum</span>(<span class="fu">c</span>(<span class="dv">0</span>, dataGraph3<span class="sc">$</span>value[<span class="sc">-</span><span class="fu">length</span>(dataGraph3<span class="sc">$</span>value)]))) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>dataGraph3,<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">1</span>,<span class="at">y=</span>value))<span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> nom), <span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste</span>(nom, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="dv">100</span><span class="sc">*</span>value, <span class="st">"%"</span>) , <span class="at">y =</span> breaks, <span class="at">fill =</span> nom), <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"white"</span>, <span class="st">"white"</span>), <span class="at">nudge_x =</span> .<span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#64B9B9"</span>,<span class="st">"#012D48"</span>,<span class="st">"#D9D9D9"</span>)) <span class="sc">+</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="histogramme-cumulatif---données-gazel-lbc" class="level4">
+<h4 class="anchored" data-anchor-id="histogramme-cumulatif---données-gazel-lbc">Histogramme cumulatif - données Gazel / LBC</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>temp_data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">nom=</span><span class="fu">c</span>(<span class="st">"ReGazel"</span>,<span class="st">"ReEdf"</span>,<span class="st">"RE aéronefs 20%"</span>,<span class="st">"RE aéronefs 50%"</span>,<span class="st">"RE aéronefs 100%"</span>, <span class="st">"Stock"</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Besoin RE Gazel estimé </span><span class="sc">\n</span><span class="st"> 1 000 000"</span>, <span class="st">"Besoin RE Gazel estimé </span><span class="sc">\n</span><span class="st"> 2 000 000"</span>, <span class="st">"20%"</span>, <span class="st">"50%"</span>, <span class="st">"100%"</span>, <span class="st">"1 129 874"</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Demande pour </span><span class="sc">\n</span><span class="st"> l'exercice 2022"</span>, <span class="dv">5</span>), <span class="st">"Stock de RE LBC </span><span class="sc">\n</span><span class="st"> disponible émis depuis 2015"</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">value=</span><span class="fu">c</span>(<span class="dv">1000000</span>,<span class="dv">2000000</span>,<span class="dv">290000</span>,<span class="dv">580000</span>,<span class="dv">580000</span>, <span class="dv">1129874</span>))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>temp_data[,<span class="st">"cumValue"</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(temp_data<span class="sc">$</span>value[<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span>, (temp_data<span class="sc">$</span>value[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]<span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">cumsum</span>(temp_data<span class="sc">$</span>value[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]), temp_data<span class="sc">$</span>value[<span class="fu">length</span>(temp_data<span class="sc">$</span>value)]<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>temp_data<span class="sc">$</span>nom <span class="ot">&lt;-</span> <span class="fu">factor</span>(temp_data<span class="sc">$</span>nom,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"RE aéronefs 100%"</span>, <span class="st">"RE aéronefs 50%"</span>,<span class="st">"RE aéronefs 20%"</span>,<span class="st">"ReEdf"</span>,<span class="st">"ReGazel"</span>, <span class="st">"Stock"</span>))</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>temp_data)<span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> value, <span class="at">fill =</span> nom, <span class="at">color =</span> nom), <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D9D9D9"</span>,<span class="st">"#A6A6A6"</span>,<span class="st">"#7F7F7F"</span>,<span class="st">"#012D48"</span>,<span class="st">"#64B9B9"</span>, <span class="st">"#4F81BD"</span>)) <span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D9D9D9"</span>,<span class="st">"#A6A6A6"</span>,<span class="st">"#7F7F7F"</span>,<span class="st">"#012D48"</span>,<span class="st">"#64B9B9"</span>, <span class="st">"#4F81BD"</span>)) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> cumValue, <span class="at">label =</span> label), <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"white"</span>,<span class="st">"white"</span>,<span class="st">"black"</span>,<span class="st">"black"</span>,<span class="st">"black"</span>, <span class="st">"white"</span>)) <span class="sc">+</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> temp_data<span class="sc">$</span>value[<span class="dv">1</span>], <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"tCO2eq"</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>), <span class="at">scientific =</span> F, <span class="at">big.mark =</span> <span class="st">" "</span>)) <span class="sc">+</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">xend =</span> <span class="fl">1.5</span>, <span class="at">y =</span> <span class="dv">3145000</span>, <span class="at">yend =</span> <span class="dv">4160000</span>)) <span class="sc">+</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">3145000</span>)), <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">4160000</span>)), <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> (<span class="dv">4160000</span><span class="sc">+</span><span class="dv">3145000</span>)<span class="sc">/</span><span class="dv">2</span>), <span class="at">label =</span> <span class="st">"Besoin RE transport aérien </span><span class="sc">\n</span><span class="st"> intérieur estimé </span><span class="sc">\n</span><span class="st"> 1 450 000 tCO2eq max*"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.85</span>, <span class="at">hjust=</span><span class="fl">0.75</span>),</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">hjust=</span><span class="dv">0</span>),</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="histogramme-horizontal" class="level4">
+<h4 class="anchored" data-anchor-id="histogramme-horizontal">Histogramme horizontal</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>tempData               <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HOME"</span>), <span class="st">"/Downloads/EtudeStandards.xlsx"</span>), <span class="at">sheet =</span> <span class="st">"brut"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>tempData[,<span class="st">"Sum"</span>]       <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(tempData[,<span class="fu">c</span>(<span class="st">"Mesurabilité"</span>, <span class="st">"Vérifiabilité"</span>, <span class="st">"Additionalité"</span>, <span class="st">"Permanence"</span>, <span class="st">"Unicité"</span>)])</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tempData)[<span class="dv">1</span>]  <span class="ot">&lt;-</span> <span class="st">"Name"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>tempData<span class="sc">$</span>Name          <span class="ot">&lt;-</span> <span class="fu">factor</span>(tempData<span class="sc">$</span>Name,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">levels =</span> tempData<span class="sc">$</span>Name[<span class="fu">order</span>(tempData<span class="sc">$</span>Sum)])</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># tempData$Additionalité &lt;- -tempData$Additionalité</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>dataPlot               <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(tempData, <span class="at">id =</span> <span class="st">"Name"</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(variable <span class="sc">!=</span> <span class="st">"Prix à la tonne"</span> <span class="sc">&amp;</span> variable <span class="sc">!=</span> <span class="st">"Note moyenne"</span><span class="sc">&amp;</span> variable <span class="sc">!=</span> <span class="st">"Sum"</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>dataPrice              <span class="ot">&lt;-</span> reshape2<span class="sc">::</span><span class="fu">melt</span>(tempData, <span class="at">id =</span> <span class="st">"Name"</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(variable <span class="sc">==</span> <span class="st">"Prix à la tonne"</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- création du plot ---- #</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data=</span>dataPlot) <span class="sc">+</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> Name, <span class="at">y =</span> value, <span class="at">group =</span> variable, <span class="at">color =</span> variable, <span class="at">fill =</span> variable), <span class="at">alpha =</span> .<span class="dv">65</span>, <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"stack"</span>, <span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#A6A6A6"</span>,<span class="st">"#7F7F7F"</span>,<span class="st">"#012D48"</span>,<span class="st">"#64B9B9"</span>, <span class="st">"#4F81BD"</span>)) <span class="sc">+</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#A6A6A6"</span>,<span class="st">"#7F7F7F"</span>,<span class="st">"#012D48"</span>,<span class="st">"#64B9B9"</span>, <span class="st">"#4F81BD"</span>)) <span class="sc">+</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">data =</span> dataPrice[<span class="fu">which</span>(<span class="fu">is.na</span>(dataPrice<span class="sc">$</span>value) <span class="sc">==</span> F),], <span class="fu">aes</span>(<span class="at">x =</span> Name, <span class="at">y =</span> <span class="sc">-</span>.<span class="dv">4</span>, <span class="at">label =</span> <span class="fu">format</span>(value, <span class="at">nsmall =</span> <span class="dv">2</span>, <span class="at">digits =</span> <span class="dv">2</span>)), <span class="at">fill =</span> <span class="st">"#012D48"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_segment(data = dataPrice, aes(x = Name, xend = Name, y = 0, yend = value/10), color="red") +</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="fu">max</span>(<span class="dv">5</span><span class="sc">*</span>dataPlot<span class="sc">$</span>value))) <span class="sc">+</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="parrallel-weight-bars" class="level4">
+<h4 class="anchored" data-anchor-id="parrallel-weight-bars">Parrallel Weight Bars</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ========= 3ème graphique =========== #</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dataGraph4            <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nom=</span><span class="fu">c</span>(<span class="st">"À la ferme"</span>, <span class="st">"Industrie"</span>,<span class="st">"Centralisé"</span>,<span class="st">"Déchets ménagers"</span>,<span class="st">"Couverture de fosse"</span>,<span class="st">"Station d'épuration"</span>), <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">223</span>,<span class="dv">8</span>,<span class="dv">20</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>dataPlot.premierebarre <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nom =</span> <span class="fu">c</span>(<span class="st">"À la ferme"</span>, <span class="st">"Autres"</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">223</span>, <span class="fu">sum</span>(dataGraph4<span class="sc">$</span>value)<span class="sc">-</span><span class="dv">223</span>))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>dataPlot.premierebarre[,<span class="st">"value2"</span>] <span class="ot">&lt;-</span> dataPlot.premierebarre<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">sum</span>(dataPlot.premierebarre<span class="sc">$</span>value)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>dataPlot.premierebarre<span class="sc">$</span>nom        <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataPlot.premierebarre<span class="sc">$</span>nom,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">c</span>(<span class="st">"À la ferme"</span>, <span class="st">"Autres"</span>)))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>dataPlot.secondebarre <span class="ot">&lt;-</span> dataGraph4[<span class="sc">-</span><span class="dv">1</span>,]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>dataPlot.secondebarre[,<span class="st">"value2"</span>] <span class="ot">&lt;-</span> dataPlot.secondebarre<span class="sc">$</span>value <span class="sc">/</span> <span class="fu">sum</span>(dataPlot.secondebarre<span class="sc">$</span>value)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>dataPlot.secondebarre<span class="sc">$</span>nom        <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataPlot.secondebarre<span class="sc">$</span>nom,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">levels =</span> <span class="fu">rev</span>(dataPlot.secondebarre<span class="sc">$</span>nom))</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>dataPlot.premierebarre[,<span class="st">"breaks"</span>] <span class="ot">&lt;-</span> <span class="fl">0.5</span><span class="sc">*</span>(<span class="fu">cumsum</span>(<span class="fu">c</span>(<span class="dv">0</span>, dataPlot.premierebarre<span class="sc">$</span>value2[<span class="sc">-</span><span class="fu">length</span>(dataPlot.premierebarre<span class="sc">$</span>value2)])) <span class="sc">+</span> <span class="fu">cumsum</span>(dataPlot.premierebarre<span class="sc">$</span>value2))</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>dataPlot.secondebarre[,<span class="st">"breaks"</span>] <span class="ot">&lt;-</span> <span class="fl">0.5</span><span class="sc">*</span>(<span class="fu">cumsum</span>(<span class="fu">c</span>(<span class="dv">0</span>, dataPlot.secondebarre<span class="sc">$</span>value2[<span class="sc">-</span><span class="fu">length</span>(dataPlot.secondebarre<span class="sc">$</span>value2)])) <span class="sc">+</span> <span class="fu">cumsum</span>(dataPlot.secondebarre<span class="sc">$</span>value2))</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> dataPlot.premierebarre, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> value2), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#012D48"</span>, <span class="st">"#4E6176"</span>), <span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> dataPlot.secondebarre, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">y =</span> value2), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#D9D9D9"</span>, <span class="st">"#BED1D1"</span>, <span class="st">"#A3C9C9"</span>, <span class="st">"#85C1C1"</span>, <span class="st">"#64B9B9"</span>), <span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">xend =</span> <span class="fl">2.5</span>, <span class="at">y =</span> dataPlot.premierebarre<span class="sc">$</span>value2[<span class="dv">1</span>], <span class="at">yend =</span> <span class="dv">0</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.5</span>, <span class="at">xend =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">yend =</span> <span class="dv">1</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.5</span>), <span class="at">ymin =</span> <span class="fu">c</span>(dataPlot.premierebarre<span class="sc">$</span>value2[<span class="dv">1</span>], <span class="dv">0</span>), <span class="at">ymax =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)), <span class="at">fill =</span> <span class="st">"#f2f2f2"</span>, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">data =</span> dataPlot.premierebarre, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="fu">paste</span>(nom, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, value) , <span class="at">y =</span> breaks), <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#012D48"</span>, <span class="st">"#4E6176"</span>), <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"white"</span>), <span class="at">nudge_x =</span> <span class="sc">-</span><span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">data =</span> dataPlot.secondebarre, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">label =</span> <span class="fu">paste</span>(nom, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, value) , <span class="at">y =</span> breaks), <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#D9D9D9"</span>, <span class="st">"#BED1D1"</span>, <span class="st">"#A3C9C9"</span>, <span class="st">"#85C1C1"</span>, <span class="st">"#64B9B9"</span>), <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"black"</span>, <span class="st">"white"</span>,<span class="st">"white"</span>,<span class="st">"white"</span>), <span class="at">nudge_x =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="baseConnaissanceGraphiquesJudo_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
