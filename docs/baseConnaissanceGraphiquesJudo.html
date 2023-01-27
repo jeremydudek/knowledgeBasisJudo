@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#kilimanjaro" id="toc-kilimanjaro" class="nav-link" data-scroll-target="#kilimanjaro">KILIMANJARO</a>
   <ul>
-  <li><a href="#situation-de-kering" id="toc-situation-de-kering" class="nav-link" data-scroll-target="#situation-de-kering">Situation de Kering</a></li>
+  <li><a href="#situation-de-kili" id="toc-situation-de-kili" class="nav-link" data-scroll-target="#situation-de-kili">Situation de Kili</a></li>
   </ul></li>
   <li><a href="#gazel" id="toc-gazel" class="nav-link" data-scroll-target="#gazel">GAZEL</a>
   <ul>
@@ -222,8 +222,8 @@ Continue? [y/n] </code></pre>
 <h2 class="anchored" data-anchor-id="exemple-de-graphiques">Exemple de graphiques</h2>
 <section id="kilimanjaro" class="level3">
 <h3 class="anchored" data-anchor-id="kilimanjaro">KILIMANJARO</h3>
-<section id="situation-de-kering" class="level4">
-<h4 class="anchored" data-anchor-id="situation-de-kering">Situation de Kering</h4>
+<section id="situation-de-kili" class="level4">
+<h4 class="anchored" data-anchor-id="situation-de-kili">Situation de Kili</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tempData           <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HOME"</span>), <span class="st">"/Downloads/situationKili.csv"</span>), <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">";"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tempData2          <span class="ot">&lt;-</span> <span class="fu">melt</span>(tempData[,<span class="sc">-</span><span class="fu">grep</span>(<span class="st">"X|Methodology|Link"</span>, <span class="fu">colnames</span>(tempData))], <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"Country"</span>, <span class="st">"Project.Type"</span>))</span>

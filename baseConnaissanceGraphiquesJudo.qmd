@@ -54,7 +54,7 @@ loadfonts()
 
 ### KILIMANJARO
 
-#### Situation de Kering
+#### Situation de Kili
 
 ```{r}
 tempData           <- read.csv(file = paste0(Sys.getenv("HOME"), "/Downloads/situationKili.csv"), header = T, sep = ";")
