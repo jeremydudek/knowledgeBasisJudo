@@ -189,9 +189,9 @@ ggplot2::ggplot(data = tempCorsiaDemand, aes(x = Year, group = variable, fill = 
 library(ggplot2)
 library(ggrepel)
 
-dataGraph3            <- data.frame(nom=c("Forêt domaniale", "Autres forêts publiques","Forêts privées"), value =c(0.2,0.36,0.44))
+dataGraph3            <- data.frame(nom=c("Forêts domaniales", "Autres forêts publiques","Forêts privées"), value =c(0.2,0.36,0.44))
 dataGraph3$nom        <- factor(dataGraph3$nom,
-                                levels = c("Forêts privées", "Autres forêts publiques","Forêt domaniale"))
+                                levels = c("Forêts privées", "Autres forêts publiques","Forêts domaniales"))
 dataGraph3[,"breaks"] <- cumsum(c(0, dataGraph3$value[-length(dataGraph3$value)])) +
   (cumsum(dataGraph3$value) - cumsum(c(0, dataGraph3$value[-length(dataGraph3$value)]))) / 2
   
@@ -311,15 +311,58 @@ ggplot2::ggplot()+
 #### Histogramme à double axe
 
 ```{r}
-dataGraph5 <- data.frame(nom=c("Grandes cultures","Polyculture élevages","Autres"), 
-                         nombre=c(13400,4261,23328),
-                         surface=c(113,134,0)/ 0.01)
+dataGraph5 <- data.frame(nom=c("Grandes cultures-GrandEst","Grandes cultures-Moselle","Polyculture élevages-GrandEst","Polyculture élevages-Moselle", "Autres-GrandEst","Autres-Moselle"),
+                           nombre=c(13400,965,4261,580,23328,1333),
+                           surface=c(113,114,134,145,0,0)/ 0.01)
+  dataPlot <- reshape2::melt(dataGraph5, id = "nom")
+  ggplot2::ggplot(data=dataPlot) +
+    geom_bar(aes(x=nom,y=value, fill = variable, group= variable, color = variable), alpha = .85, stat = "identity", position = position_dodge(), width = 0.75)+
+    scale_fill_manual(name= "Profil des exploitations", values = c("#1B2441", "#64B9B9"), labels=c("Nombre d'exploitations","Surface moyenne des exploitations")) +
+    scale_color_manual(values = c("#1B2441", "#64B9B9")) +
+    guides(color = FALSE) +
+    labs(x="",y="Surface")+
+    scale_y_continuous(name="Nombre d'exploitations",sec.axis = sec_axis(name = "Surface", trans=~.*0.01))+
+    theme_classic()+
+    theme(panel.background = element_rect(fill = 'transparent',colour='transparent'))+
+    coord_flip()
+```
 
-dataPlot <- reshape2::melt(dataGraph5, id = "nom")
+```{r}
+# --------- Alternative pie chart ---------- #
+tempData   <- read.csv(file = paste0(Sys.getenv("HOME"), "/downloads/ghg-emissions (1).csv"), sep = ";")
+colorsType <- scales::gradient_n_pal(colours = c("#1B2441", "#64B9B9"), space =  c("Lab"))(seq(0,1,length.out = length(unique(tempData$Sector))))
 
-ggplot2::ggplot(data=dataPlot) +
-  geom_bar(aes(x=nom,y=value, fill = variable, group= variable, color = variable), alpha = .65, stat = "identity", position = position_dodge(), width = 0.75)+
-  # geom_bar(aes(x=nom,y=surface / 0.01), fill = "red", alpha = .65, stat = "identity", position = "stack", width = 0.4)+
-  scale_y_continuous(name="Nombre d'exploitations", sec.axis = sec_axis( trans=~.*0.01, name="Surface moyenne en ha"))+
-  coord_flip()
+ggplot2::ggplot(data = tempData, aes(x = Sector, y = X2019, fill = Sector, color = Sector)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(x = Sector, y = pmax(0, X2019), label = Sector), angle = 90, hjust = -.1, size = 7, fontface = 2) +
+  geom_text(aes(x = Sector, y = sign(X2019)*5, label = X2019), color = "white", size = 5) +
+  scale_fill_manual(values = colorsType) +
+  scale_color_manual(values = colorsType) +
+  ylim(c(1.1*min(tempData$X2019), 1.1*max(tempData$X2019))) +
+  theme_void() +
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        legend.position = "none")
+
+```
+
+```{r}
+# ------- 2eme graphs LBC ------ #
+tempData           <- readxl::read_xlsx(path = paste0(Sys.getenv("HOME"), "/downloads/Foret (1).xlsx"))
+colnames(tempData) <- c("region", "acteur", "volume", "cout")
+tempData$cout      <- as.numeric(tempData$cout)
+
+ggplot2::ggplot() +
+  geom_bar(data = tempData, aes(x = "1", y = volume, group = region, fill = region, color = region), stat = "identity", position = position_dodge2(preserve = "single")) +
+  geom_point(data = tempData, aes(x = "1", y = cout*150, group = region), position = position_dodge(width = 1), shape = 23, fill = "orange", color = "orange") +
+  scale_y_continuous(name = "Volume", sec.axis = sec_axis(~ . / 150, name = "Coût projet/RE potentielles")) +
+  scale_fill_manual(values = c("#1B2441", "#64B9B9")) +
+  scale_color_manual(values = c("#1B2441", "#64B9B9")) +
+  facet_grid(. ~ acteur)+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        strip.text.x = element_text(size = 10, face = "bold"))
 ```
